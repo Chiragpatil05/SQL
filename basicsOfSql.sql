@@ -41,14 +41,24 @@ SELECT * FROM employee;
 
 SELECT 	EmpId , firstName , lastName , salary location from employee;
 
+-- WHERE
 -- order of execution : FROM -> WHERE -> SELECT   
 SELECT firstName , lastName , salary from employee WHERE salary >= 200000;
 
+-- QUESTION ?? can we use SELECT keyword without using FROM clause ?
+-- yes , using dual table
+-- dual table are dummy table created by mysql , which helps users to do perform certain obvious action without referring the user defined table
 SELECT now() AS server_time; -- gives current time
 SELECT ucase("chirag") AS uppercase_name;
 SELECT lcase("HAHAHA") AS lowercase_name;
 SELECT 10 + 10 * 10 / 10 AS maths;
 
+-- BETWEEN
+SELECT * FROM employee WHERE age BETWEEN 30 AND 40;
+
+-- IN : to redude OR conditions
+SELECT * FROM employee WHERE age IN(20,27,37);
+SELECT * FROM employee WHERE age NOT IN(20,27,37);
 
 -- sorting : ORDER BY, when we want data in sorted order 
 -- by default ORDER BY uses AESC (ascending order)
