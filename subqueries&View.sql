@@ -3,7 +3,7 @@ SHOW TABLES;
 
 SELECT * FROM employee;
 SELECT * FROM project;
-SELECT * FROM client;
+SELECT * FROM client;	
 
 -- sub queries : query inside query
 -- subqueries are alternate methods to join , but slower than join
@@ -32,3 +32,8 @@ ALTER VIEW emp_view AS SELECT id,fname,lname,city FROM employee;
 
 -- droping a view
 DROP VIEW IF EXISTS emp_view;
+
+-- create an empty table with same structure as another table
+CREATE TABLE employee_copy AS (SELECT * from employee WHERE 1 = 2);
+DESC employee_copy;
+SELECT * FROM employee_copy;
